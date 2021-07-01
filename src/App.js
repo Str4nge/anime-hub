@@ -1,17 +1,21 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Starred from './pages/Starred';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
     <Switch>
       <Route exact path="/">
-        This is the HomePage.
+        <Home />
       </Route>
       <Route exact path="/starred">
-        This is Starred Path
+        <Starred />
       </Route>
-      <Route>This is 404 error path</Route>
+      <Route>
+        <ErrorPage />
+      </Route>
     </Switch>
   );
 }
