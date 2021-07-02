@@ -3,7 +3,7 @@ import AnimeCard from './AnimeCard';
 
 const AnimeGrid = ({ data }) => {
   return (
-    <div>
+    <div className="flex-wrap">
       {data.map(item => {
         return (
           <AnimeCard
@@ -14,7 +14,7 @@ const AnimeGrid = ({ data }) => {
             }}
             id={item.id}
             description={item.attributes.description}
-            image={item.attributes.posterImage.tiny}
+            image={item.attributes.posterImage.small}
           />
         );
       })}

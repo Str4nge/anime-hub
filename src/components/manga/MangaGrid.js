@@ -3,7 +3,7 @@ import MangaCard from './MangaCard';
 
 const MangaGrid = ({ data }) => {
   return (
-    <div>
+    <div className="flex-wrap">
       {data.map(({ id, attributes }) => {
         return (
           <MangaCard
