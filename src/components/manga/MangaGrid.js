@@ -14,7 +14,7 @@ const MangaGrid = ({ data }) => {
             }}
             id={id}
             description={attributes.description}
-            image={attributes.posterImage.tiny}
+            image={attributes.posterImage.small}
           />
         );
       })}
