@@ -7,14 +7,40 @@ const BASE_URL = 'https://kitsu.io/api/edge';
 const AnimeDetail = () => {
   const params = useParams();
   const [details, setDetails] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getApiResult(`/anime/${params.id}`).then(res => {
-      setDetails(res);
-    });
+    let isMounted = true;
+
+    getApiResult(`/anime/${params.id}`)
+      .then(res => {
+        setTimeout(() => {
+          if (isMounted) {
+            setDetails(res);
+            setIsLoading(false);
+          }
+        }, 2000);
+      })
+      .catch(err => {
+        setError(err.message);
+        setIsLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
   }, [params.id]);
 
   console.log(params, details);
+
+  if (isLoading) {
+    return <div>Data is Loading...</div>;
+  }
+  if (error) {
+    return <div>Error Occurred: {error}</div>;
+  }
+
   return (
     <div>
       <a
