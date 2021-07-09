@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Starred from './pages/Starred';
 import ErrorPage from './pages/ErrorPage';
-import AnimeDetail from './pages/AnimeDetail';
+import ResourceDetail from './pages/ResourceDetail';
 
 function App() {
   return (
@@ -15,7 +15,10 @@ function App() {
         <Starred />
       </Route>
       <Route exact path="/anime/:id">
-        <AnimeDetail />
+        <ResourceDetail category="anime" />
+      </Route>
+      <Route exact path="/manga/:id">
+        <ResourceDetail category="manga" />
       </Route>
       <Route>
         <ErrorPage />
