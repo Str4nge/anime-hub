@@ -1,9 +1,10 @@
 import React from 'react';
 import MangaCard from './MangaCard';
+import { FlexGrid } from '../Styled';
 
 const MangaGrid = ({ data }) => {
   return (
-    <div className="flex-wrap">
+    <FlexGrid>
       {data.map(({ id, attributes }) => {
         return (
           <MangaCard
@@ -18,7 +19,7 @@ const MangaGrid = ({ data }) => {
           />
         );
       })}
-    </div>
+    </FlexGrid>
   );
 };
 

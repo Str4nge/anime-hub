@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getApiResult } from '../config';
 import MainData from '../components/MainData';
 import Details from '../components/Details';
+import { InfoBlock, ShowPageWrapper } from './Details.styled';
 
 const reducer = (prevState, action) => {
   switch (action.type) {
@@ -61,13 +62,13 @@ const AnimeDetail = ({ category }) => {
   // console.log(data);
 
   return (
-    <div>
+    <ShowPageWrapper>
       <MainData
         image={data.posterImage.small}
         title={{ eng: data.titles.en_jp, jpn: data.titles.ja_jp }}
         description={data.description}
       />
-      <div>
+      <InfoBlock>
         <h2>Details</h2>
         <Details
           id={params.id}
@@ -76,8 +77,8 @@ const AnimeDetail = ({ category }) => {
           status={data.status}
           genreString={`${category}/${params.id}/genres`}
         />
-      </div>
-    </div>
+      </InfoBlock>
+    </ShowPageWrapper>
   );
 };
 

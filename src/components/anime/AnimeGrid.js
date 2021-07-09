@@ -1,9 +1,10 @@
 import React from 'react';
 import AnimeCard from './AnimeCard';
+import { FlexGrid } from '../Styled';
 
 const AnimeGrid = ({ data }) => {
   return (
-    <div className="flex-wrap">
+    <FlexGrid>
       {data.map(item => {
         return (
           <AnimeCard
@@ -18,7 +19,7 @@ const AnimeGrid = ({ data }) => {
           />
         );
       })}
-    </div>
+    </FlexGrid>
   );
 };
 

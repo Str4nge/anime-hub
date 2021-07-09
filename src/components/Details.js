@@ -1,6 +1,7 @@
 /* eslint-disable no-unneeded-ternary */
 import React, { useState, useEffect } from 'react';
 import { getApiResult } from '../config';
+import { DetailsWrapper, TagList } from './StyledDetail';
 
 const BASE_URL = 'https://kitsu.io/api/edge';
 
@@ -23,7 +24,7 @@ const Details = ({ id, rating, count, status, genreString }) => {
   }, [genreString]);
 
   return (
-    <div>
+    <DetailsWrapper>
       <p>Average rating: {rating}</p>
       <div>
         <p>
@@ -35,15 +36,17 @@ const Details = ({ id, rating, count, status, genreString }) => {
       </div>
       <div>
         Tags:
-        <div>
+        <TagList>
           {genre &&
-            genre.map(item => <p key={item.id}>{item.attributes.name}</p>)}
-        </div>
+            genre.map(item => (
+              <span key={item.id}>{item.attributes.name}</span>
+            ))}
+        </TagList>
       </div>
       <a href={`${BASE_URL}/anime/${id}`} rel="noreferrer" target="_blank">
         {id}
       </a>
-    </div>
+    </DetailsWrapper>
   );
 };
 

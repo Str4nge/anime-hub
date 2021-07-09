@@ -1,19 +1,21 @@
 import React from 'react';
+import { Headline, MainDataWrapper } from './MainData.styled';
 
 const MainData = ({ title, description, image }) => {
   return (
-    <div>
+    <MainDataWrapper>
       <img src={image} alt="show-cover" />
-      <div>
-        <h1>{title.eng}</h1>
-        <div>
-          <p>{title.jpn}</p>
+      <div className="text-side">
+        <Headline>
+          <h2>{title.eng}</h2>
+          <span>{title.jpn}</span>
+        </Headline>
+
+        <div className="summary">
+          <p>{description}</p>
         </div>
       </div>
-      <div>
-        <p>{description}</p>
-      </div>
-    </div>
+    </MainDataWrapper>
   );
 };
 

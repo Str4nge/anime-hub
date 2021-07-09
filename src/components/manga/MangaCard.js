@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { StyledMangaCard } from './MangaCard.styled';
 
 const MangaCard = ({ title, image, id, description }) => {
   const { eng, jpn } = title;
@@ -7,7 +8,7 @@ const MangaCard = ({ title, image, id, description }) => {
     ? `${description.split(' ').slice(0, 10).join(' ')}...`
     : 'No Description!';
   return (
-    <div className="card">
+    <StyledMangaCard>
       <div className="img-wrapper">
         <img src={image} alt={`${eng}_image`} />
       </div>
@@ -17,7 +18,7 @@ const MangaCard = ({ title, image, id, description }) => {
       <div className="btns">
         <Link to={`/manga/${id}`}>Read more</Link>
       </div>
-    </div>
+    </StyledMangaCard>
   );
 };
 
