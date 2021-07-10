@@ -3,11 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { getApiResult } from '../config';
 import { DetailsWrapper, TagList } from './StyledDetail';
 
-const BASE_URL = 'https://kitsu.io/api/edge';
+const BASE_URL = 'https://kitsu.io';
 
-const Details = ({ id, rating, count, status, genreString }) => {
+const Details = ({ id, rating, count, status, genreString, ctg }) => {
   const [genre, setGenre] = useState(null);
-  const { epsCnt, vlmCnt } = count;
 
   useEffect(() => {
     let isMounted = true;
@@ -31,7 +30,7 @@ const Details = ({ id, rating, count, status, genreString }) => {
           Status: <span>{status}</span>
         </p>
         <p>
-          Total {epsCnt ? 'Episodes' : 'Volume'}: {epsCnt ? epsCnt : vlmCnt}
+          Total {ctg === 'anime' ? 'Episodes' : 'Volume'}: {count}
         </p>
       </div>
       <div>
@@ -43,8 +42,9 @@ const Details = ({ id, rating, count, status, genreString }) => {
             ))}
         </TagList>
       </div>
-      <a href={`${BASE_URL}/anime/${id}`} rel="noreferrer" target="_blank">
-        {id}
+      checkout what others think{' '}
+      <a href={`${BASE_URL}/${ctg}/${id}`} rel="noreferrer" target="_blank">
+        here
       </a>
     </DetailsWrapper>
   );

@@ -60,6 +60,7 @@ const AnimeDetail = ({ category }) => {
 
   const data = details.data.attributes;
   // console.log(data);
+  const ctg = details.data.type;
 
   return (
     <ShowPageWrapper>
@@ -73,7 +74,8 @@ const AnimeDetail = ({ category }) => {
         <Details
           id={params.id}
           rating={data.averageRating}
-          count={{ epsCnt: data.episodeCount, vlmCnt: data.volumeCount }}
+          ctg={ctg}
+          count={ctg === 'anime' ? data.episodeCount : data.volumeCount}
           status={data.status}
           genreString={`${category}/${params.id}/genres`}
         />
