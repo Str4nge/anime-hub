@@ -3,11 +3,11 @@ import { useReducer, useEffect } from 'react';
 function stateReducer(prevState, action) {
   switch (action.type) {
     case 'ADD': {
-      return [...prevState, action.resourceID];
+      return [...prevState, { data: action.resourceID, type: action.val }];
     }
     case 'REMOVE': {
-      return prevState.filter(id => {
-        return id !== action.resourceID;
+      return prevState.filter(({ data }) => {
+        return data !== action.resourceID;
       });
     }
 
@@ -30,6 +30,6 @@ function usePersistedReducer(reducer, initialState, key) {
   return [state, dispatch];
 }
 
-export function useStarred(key = 'anime') {
+export function useStarred(key = 'starred') {
   return usePersistedReducer(stateReducer, [], key);
 }

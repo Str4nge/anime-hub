@@ -9,12 +9,14 @@ const AnimeGrid = ({ data }) => {
   return (
     <FlexGrid>
       {data.map(item => {
-        const isStarred = starredShows.includes(item.id);
+        const isStarred = starredShows.find(element => {
+          return element.data === item.id;
+        });
         const toggleStar = () => {
           if (isStarred) {
             dispatchStarred({ type: 'REMOVE', resourceID: item.id });
           } else {
-            dispatchStarred({ type: 'ADD', resourceID: item.id });
+            dispatchStarred({ type: 'ADD', resourceID: item.id, val: 'anime' });
           }
         };
         return (

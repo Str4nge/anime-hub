@@ -49,7 +49,7 @@ const AnimeDetail = ({ category }) => {
     };
   }, [params.id, category]);
 
-  console.log(details);
+  // console.log(details);
 
   if (isLoading) {
     return <div>Data is Loading...</div>;
