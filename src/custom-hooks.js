@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect, useState } from 'react';
 
 function stateReducer(prevState, action) {
   switch (action.type) {
@@ -32,4 +32,18 @@ function usePersistedReducer(reducer, initialState, key) {
 
 export function useStarred(key = 'starred') {
   return usePersistedReducer(stateReducer, [], key);
+}
+
+export function usePersistedQuery(key = 'lastInput') {
+  const [input, setInput] = useState(() => {
+    const lastInput = sessionStorage.getItem(key);
+
+    return lastInput ? JSON.parse(lastInput) : '';
+  });
+
+  const setPersistedInput = newInput => {
+    setInput(newInput);
+    sessionStorage.setItem(key, JSON.stringify(newInput));
+  };
+  return [input, setPersistedInput];
 }

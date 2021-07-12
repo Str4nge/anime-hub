@@ -3,9 +3,10 @@ import MainPageLayout from '../components/MainPageLayout';
 import AnimeGrid from '../components/anime/AnimeGrid';
 import MangaGrid from '../components/manga/MangaGrid';
 import { getApiResult } from '../config';
+import { usePersistedQuery } from '../custom-hooks';
 
 const Home = () => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = usePersistedQuery();
   const [results, setResults] = useState(null);
   const [srchOpt, setSrchOpt] = useState('anime');
 
