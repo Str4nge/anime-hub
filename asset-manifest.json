@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/anime-hub/static/css/main.181b761e.chunk.css",
-    "main.js": "/anime-hub/static/js/main.1cacf9d1.chunk.js",
-    "main.js.map": "/anime-hub/static/js/main.1cacf9d1.chunk.js.map",
+    "main.css": "/anime-hub/static/css/main.bbbd6621.chunk.css",
+    "main.js": "/anime-hub/static/js/main.7fd28498.chunk.js",
+    "main.js.map": "/anime-hub/static/js/main.7fd28498.chunk.js.map",
     "runtime-main.js": "/anime-hub/static/js/runtime-main.4e90d73b.js",
     "runtime-main.js.map": "/anime-hub/static/js/runtime-main.4e90d73b.js.map",
     "static/js/2.d8ea6c4d.chunk.js": "/anime-hub/static/js/2.d8ea6c4d.chunk.js",
@@ -12,14 +12,14 @@
     "index.html": "/anime-hub/index.html",
     "service-worker.js": "/anime-hub/service-worker.js",
     "service-worker.js.map": "/anime-hub/service-worker.js.map",
-    "static/css/main.181b761e.chunk.css.map": "/anime-hub/static/css/main.181b761e.chunk.css.map",
+    "static/css/main.bbbd6621.chunk.css.map": "/anime-hub/static/css/main.bbbd6621.chunk.css.map",
     "static/js/2.d8ea6c4d.chunk.js.LICENSE.txt": "/anime-hub/static/js/2.d8ea6c4d.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/anime-hub/static/media/notfound.abaf4c6c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4e90d73b.js",
     "static/js/2.d8ea6c4d.chunk.js",
-    "static/css/main.181b761e.chunk.css",
-    "static/js/main.1cacf9d1.chunk.js"
+    "static/css/main.bbbd6621.chunk.css",
+    "static/js/main.7fd28498.chunk.js"
   ]
 }
