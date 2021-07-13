@@ -133,6 +133,11 @@ footer {
   min-height: 94vh;
   flex-direction: column;
 }
+.starred {
+  display: flex;
+  min-height: 67vh;
+  flex-direction: column;
+}
 .err-block {
   font-size: 40px;
   padding: 40px;
@@ -145,7 +150,7 @@ footer {
 
 .err-img {
   min-height: 200px;
-  width: 85%;
+  max-width: 84%;
   padding: 0 100px;
   text-align: center;
   font-size: 30px;
@@ -153,4 +158,14 @@ footer {
   background-position: 50% 25px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (device-width: 360px) and (device-height: 640px) {
+  .err-block {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  .err-img {
+    font-size: 20px;
+  }
 }

@@ -38,7 +38,7 @@ const Starred = () => {
 
   return (
     <MainPageLayout>
-      <div className="home">
+      <div className="starred">
         {isLoading && <div>Data is Loading...</div>}
         {error && <div>Error Occured</div>}
         {!isLoading && !starredList && (

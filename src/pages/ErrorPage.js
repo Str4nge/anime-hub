@@ -6,7 +6,6 @@ const ErrorPage = () => {
       <div className="err-block">
         Error 404! <br />
         OOPS Page you are looking for does not exist.
-        <div className="err-img" />
       </div>
       <footer>
         An anime disovering website powered by <i>&copy;Kitsu</i>, handcrafted
