@@ -42,9 +42,10 @@ const Details = ({ id, rating, count, status, genreString, ctg }) => {
             ))}
         </TagList>
       </div>
-      checkout what others think{' '}
+      <br />
+      Checkout what others think on{' '}
       <a href={`${BASE_URL}/${ctg}/${id}`} rel="noreferrer" target="_blank">
-        here
+        Kitsu.io
       </a>
     </DetailsWrapper>
   );
