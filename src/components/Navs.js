@@ -1,6 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { StyledLink } from './Styled';
 
 const Links = [
   { to: '/', text: 'Home' },
@@ -8,13 +9,21 @@ const Links = [
 ];
 
 const Navs = () => {
+  const location = useLocation();
+  // console.log(location);
+
   return (
     <div>
-      <ul>
+      <ul className="nav-list">
         {Links.map(link => {
           return (
             <li key={link.to}>
-              <Link to={link.to}>{link.text}</Link>
+              <StyledLink
+                className={location.pathname === link.to ? 'active' : ''}
+                to={link.to}
+              >
+                {link.text}
+              </StyledLink>
             </li>
           );
         })}

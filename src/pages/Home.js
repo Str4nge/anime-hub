@@ -49,13 +49,14 @@ const Home = () => {
   return (
     <MainPageLayout>
       <input
+        className="search"
         type="text"
         placeholder="Enter here to search"
         onChange={inputChange}
         value={input}
         onKeyDown={keyPress}
       />
-      <div>
+      <div className="radio">
         <label htmlFor="anime">
           Anime
           <input
@@ -77,9 +78,11 @@ const Home = () => {
           />
         </label>
       </div>
-      <button type="button" onClick={search}>
-        Search
-      </button>
+      <div className="btn-wrapper">
+        <button type="button" onClick={search}>
+          Search
+        </button>
+      </div>
 
       {renderResult()}
     </MainPageLayout>
