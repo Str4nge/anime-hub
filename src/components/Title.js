@@ -5,6 +5,7 @@ const Title = ({ title, subtitle }) => {
     <div className="title">
       <h1>{title}</h1>
       <p>{subtitle}</p>
+      <hr />
     </div>
   );
 };

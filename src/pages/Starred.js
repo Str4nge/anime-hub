@@ -38,10 +38,22 @@ const Starred = () => {
 
   return (
     <MainPageLayout>
-      {isLoading && <div>Data is Loading...</div>}
-      {error && <div>Error Occured</div>}
-      {!isLoading && !starredList && <div>No Starred shows</div>}
-      {!isLoading && starredList && <AnimeGrid data={starredList} />}
+      <div className="home">
+        {isLoading && <div>Data is Loading...</div>}
+        {error && <div>Error Occured</div>}
+        {!isLoading && !starredList && (
+          <div className="err-img">No Starred shows</div>
+        )}
+        {!isLoading && starredList && (
+          <div>
+            <AnimeGrid data={starredList} />
+          </div>
+        )}
+        <footer>
+          An anime disovering website powered by <i>&copy;Kitsu</i>, handcrafted
+          by Str4nge
+        </footer>
+      </div>
     </MainPageLayout>
   );
 };

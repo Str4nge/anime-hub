@@ -63,24 +63,30 @@ const AnimeDetail = ({ category }) => {
   const ctg = details.data.type;
 
   return (
-    <ShowPageWrapper>
-      <MainData
-        image={data.posterImage.small}
-        title={{ eng: data.titles.en_jp, jpn: data.titles.ja_jp }}
-        description={data.description}
-      />
-      <InfoBlock>
-        <h2>Details</h2>
-        <Details
-          id={params.id}
-          rating={data.averageRating}
-          ctg={ctg}
-          count={ctg === 'anime' ? data.episodeCount : data.volumeCount}
-          status={data.status}
-          genreString={`${category}/${params.id}/genres`}
+    <div>
+      <ShowPageWrapper>
+        <MainData
+          image={data.posterImage.small}
+          title={{ eng: data.titles.en_jp, jpn: data.titles.ja_jp }}
+          description={data.description}
         />
-      </InfoBlock>
-    </ShowPageWrapper>
+        <InfoBlock>
+          <h2>Details</h2>
+          <Details
+            id={params.id}
+            rating={data.averageRating}
+            ctg={ctg}
+            count={ctg === 'anime' ? data.episodeCount : data.volumeCount}
+            status={data.status}
+            genreString={`${category}/${params.id}/genres`}
+          />
+        </InfoBlock>
+      </ShowPageWrapper>
+      <footer>
+        An anime disovering website powered by <i>&copy;Kitsu</i>, handcrafted
+        by Str4nge
+      </footer>
+    </div>
   );
 };
 

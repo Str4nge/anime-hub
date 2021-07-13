@@ -34,7 +34,7 @@ const Home = () => {
 
   const renderResult = () => {
     if (results && results.length === 0) {
-      return <div>No Results</div>;
+      return <div className="err-img">No Results</div>;
     }
     if (results && results.length > 0) {
       return srchOpt === 'anime' ? (
@@ -47,45 +47,56 @@ const Home = () => {
   };
 
   return (
-    <MainPageLayout>
-      <input
-        className="search"
-        type="text"
-        placeholder="Enter here to search"
-        onChange={inputChange}
-        value={input}
-        onKeyDown={keyPress}
-      />
-      <div className="radio">
-        <label htmlFor="anime">
-          Anime
-          <input
-            type="radio"
-            id="anime"
-            value="anime"
-            onChange={radioChange}
-            checked={isAnimeOpted}
-          />
-        </label>
-        <label htmlFor="manga">
-          Manga
-          <input
-            type="radio"
-            id="manga"
-            value="manga"
-            onChange={radioChange}
-            checked={!isAnimeOpted}
-          />
-        </label>
-      </div>
-      <div className="btn-wrapper">
-        <button type="button" onClick={search}>
-          Search
-        </button>
-      </div>
+    <div className="home">
+      <MainPageLayout>
+        <input
+          className="search"
+          type="text"
+          placeholder="Enter here to search"
+          onChange={inputChange}
+          value={input}
+          onKeyDown={keyPress}
+        />
+        <div className="radio">
+          <div>
+            <label htmlFor="anime">
+              Anime
+              <input
+                type="radio"
+                id="anime"
+                value="anime"
+                onChange={radioChange}
+                checked={isAnimeOpted}
+              />
+            </label>
+          </div>
 
-      {renderResult()}
-    </MainPageLayout>
+          <div>
+            <label htmlFor="manga">
+              Manga
+              <input
+                type="radio"
+                id="manga"
+                value="manga"
+                onChange={radioChange}
+                checked={!isAnimeOpted}
+              />
+            </label>
+          </div>
+        </div>
+        <div className="btn-wrapper">
+          <button type="button" onClick={search}>
+            Search
+          </button>
+        </div>
+
+        {renderResult()}
+      </MainPageLayout>
+      <footer>
+        An anime disovering website powered by <i>&copy;Kitsu</i>, handcrafted
+        by Str4nge
+      </footer>
+    </div>
   );
 };
 
